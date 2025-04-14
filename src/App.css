@@ -3,40 +3,141 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #1684b8; /* Example dark background */
+  min-height: 100vh; /* Makes sure it covers the full viewport */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+/* Layout Container */
+.app-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Left Panel - Form */
+.left-panel {
+  flex: 1;
+  max-width: 45%;
+  background-color: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  color: white;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Right Panel - Expense List */
+.right-panel {
+  flex: 1;
+  max-width: 50%;
+  background-color: #2b2b2b;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  color: white;
 }
 
-.card {
-  padding: 2em;
+/* Expense Form Layout */
+.expense-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.read-the-docs {
-  color: #888;
+.expense-form input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.expense-form button {
+  background-color: #61dafb;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.expense-form button:hover {
+  background-color: #21a1f1;
+  color: black;
+}
+
+/* Expense list */
+.expense-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expense-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Delete icon */
+.delete-icon {
+  color: #ff4d4f;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.delete-icon:hover {
+  transform: scale(1.2);
+}
+
+.expense-header,
+.expense-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Equal widths for all columns */
+  padding: 0.75rem 1rem;
+  background-color: #333;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.expense-header {
+  background-color: #444;
+  font-weight: bold;
+  margin-top: 1rem;
+  color: #fff;
+}
+
+.expense-header span,
+.expense-row span {
+  text-align: left;
+  padding: 0 0.5rem;
+  line-height: 1.5;
+}
+
+/* Optional: Styling for search bar */
+.search-bar {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.expense-form input[type="date"] {
+  background-color: #111;
+  color: white;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
 }
